@@ -3,6 +3,7 @@ import java.util.Properties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 // release 서명 정보는 저장소 밖 파일에서 읽는다(기본: ~/.motioncare/keystore.properties).
@@ -16,18 +17,18 @@ val keystoreProps = Properties().apply {
 }
 
 android {
-    namespace = "com.motioncare.spike"
+    namespace = "com.motioncare.deolulleong"
     compileSdk = 35
 
     // AAOS Car API (CarPropertyManager, CarUxRestrictionsManager)
     useLibrary("android.car")
 
     defaultConfig {
-        applicationId = "com.motioncare.spike"
+        applicationId = "com.motioncare.deolulleong"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
-        versionName = "0.1-spike"
+        versionName = "1.0.0"
     }
 
     signingConfigs {
@@ -49,6 +50,10 @@ android {
         }
     }
 
+    buildFeatures {
+        compose = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -59,6 +64,13 @@ android {
 }
 
 dependencies {
+    // Pleos Vehicle SDK (Gradle 의존성으로만 받는다. 바이너리는 저장소에 넣지 않는다)
     implementation("ai.pleos.playground:Vehicle:2.3.2")
-    implementation("ai.pleos.playground:NaviHelper:3.0.5") // 덤 확인용
+
+    // 화면 (Jetpack Compose)
+    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
+    implementation("androidx.activity:activity-compose:1.9.3")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.foundation:foundation")
+    implementation("androidx.compose.material3:material3")
 }

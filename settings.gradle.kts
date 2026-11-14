@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MotionCareSpike"
+rootProject.name = "DeolUlleong"
 include(":app")

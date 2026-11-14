@@ -31,3 +31,4 @@ submission/
 # 기타
 *.log
 __pycache__/
+tools/out/
