@@ -1,0 +1,20 @@
+# 콘솔 속도 튐 시험 (tools/console_jitter_test.py, 2026-11-15)
+# 스크립트가 0.1초마다 속도를 쓰고(20 -> 60 -> 100 -> 43 km/h, 125회), 쓸 때마다 /vehicle/state 의 speed_kph 를 읽어
+# 명령값과 2 km/h 넘게 다른 횟수를 센다. 콘솔 페이지는 화면이 그려지는 브라우저(Edge headless)로 열어 둔다.
+# (숨겨진 브라우저 탭은 requestAnimationFrame 이 멈춰 페이지 물리 계산이 돌지 않으므로 시험이 되지 않는다.)
+
+원래 콘솔 페이지(http://127.0.0.1:8088/) 열어 둠
+  samples=125 mismatches=22 worst=33.0
+  예: cmd 97 got 64, cmd 73 got 67, cmd 49 got 70, cmd 43 got 71
+
+보기 전용 콘솔(tools/console_viewer.py, http://127.0.0.1:8090/) 열어 둠
+  samples=125 mismatches=0 worst=0
+  페이지가 그리는 속도와 서버 속도 비교(1.5초 간격 6회): 29/29, 35/35, 42/42, 48/48, 55/55, 62/62
+
+원인
+  콘솔 페이지는 매 프레임 physicsTick()으로 자체 속도를 계산하고, 차가 움직이는 동안(speed > 0) markLocalControl()과
+  queueCommit()으로 그 속도를 PUT /vehicle/controls 로 서버에 다시 쓴다. 이때 서버 상태(0.9초마다 읽음)는 무시한다.
+  그래서 스크립트가 쓴 속도와 페이지가 계산한 감속 속도가 번갈아 들어가 튄다.
+해결
+  console_viewer.py 가 페이지 끝에 스크립트를 넣어 markLocalControl, queueCommit 을 비우고 physicsTick 은 그리기만 하게 바꾼다.
+  상태 읽기는 0.2초마다로 늘린다. 무드등 색, 공조, 좌석, 속도, 핸들 표시는 그대로 보인다.

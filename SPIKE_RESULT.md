@@ -5,6 +5,8 @@
 - 앱: 이 폴더의 `app/` (패키지 `com.motioncare.spike`). 빌드·설치·실행 확인함.
 - 근거 파일은 모두 `spike_evidence/`에 있다. 로그 태그는 `MCSPIKE`다.
 - 표기: **확인 안 됨** = 이번에 직접 보지 못했거나 추정한 내용.
+- 이 보고서가 말하는 시험 앱 코드(`com.motioncare.spike`, 버튼 이름, `ShakeEstimator.kt` 경로)는 git 태그 `spike`에 있다. 지금 `app/`은 이 결과로 만든 덜울렁 1차 데모 앱이다(README 참고).
+- 맨 아래 '1차 제출 준비에서 새로 확인한 것(2026-11-15)'에 이후 확인 결과를 더했다.
 
 ## 요약표
 
@@ -202,7 +204,21 @@
   - 페이지 대신 `POST /browser/session?client=<아무이름>`을 1초마다 보내면 활성 상태가 유지된다(타임아웃 3초).
 - `/vehicle/catalog`에 기능별 `write_endpoint`, 필드 이름, VHAL 프로퍼티 ID가 다 있다.
 
+## 1차 제출 준비에서 새로 확인한 것 (2026-11-15)
+
+| 항목 | 결과 | 근거 | 내용 |
+|---|---|---|---|
+| 콘솔 속도 튐 | **해결** | `docs/evidence/console_jitter_test.txt`, `spike_evidence/console_viewer_mode.png` | 원인: 콘솔 페이지의 `physicsTick()`이 차가 움직이는 동안 자체 계산 속도를 `PUT /vehicle/controls`로 계속 다시 쓴다. `tools/console_viewer.py`(보기 전용 프록시)로 페이지의 물리 계산과 쓰기를 끄니 125회 중 튐 22회(최대 33 km/h)에서 0회가 됐다. |
+| release APK | **됨** | `spike_evidence/logcat_release_apk_check.txt`, `docs/evidence/release_demo_timeline.txt` | 서명 release(R8 끔)를 지우고 새로 `adb install -g`로 설치. 차속, 핸들각, 무드등, 공조 호출이 debug와 같이 동작. `-g`로 CAR_SPEED가 허용되고 Pleos 권한은 normal이라 자동 허용. |
+| 콘솔 비활성과 차속 이벤트 | 확인 | (수동 확인) | 콘솔 세션이 없어도(`emulator_active: false`) `PERF_VEHICLE_SPEED` 이벤트는 약 10 Hz로 계속 온다. 그래서 콘솔로는 '신호 끊김'을 만들 수 없다. 덜울렁은 debug 전용 브로드캐스트로 시험했다. |
+| 콘솔 쓰기 형식 | 확인 | `tools/drive_scenario.py` | 공조 `PUT /vehicle/hvac?power=true&recirc=true&fan_speed=3`, 무드등 `PUT /vehicle/body?ambient_mode=On&ambient_brightness=60&ambient_color=%23ffffff`, 좌석 `area`는 `rear_left`, `rear_right`만 받는다(`rear_center`는 `invalid_seat_area`). |
+| 2열 탑승 값 | 부분 | `docs/evidence/edge_tests_debug.txt` | 반전은 그대로다. 콘솔 좌석을 바꾼 직후 앱을 켜면 첫 조회가 이전 값으로 한 번 나온 뒤 이벤트로 바로잡힌 적이 있다. 덜울렁은 1초 이상 유지된 값만 쓴다. |
+| 알림음 | 됨(앱 쪽) | 앱 logcat `AudioTrack ... frames delivered` | `ToneGenerator(STREAM_NOTIFICATION)`가 소리를 내보낸다. PC 스피커로 들리는지는 확인 안 됨. |
+| 뒤로 키와 onDestroy | 확인 | `docs/evidence/edge_tests_debug.txt` | Android 12부터 첫 화면에서 뒤로 키는 앱을 끝내지 않고 뒤로 보낸다(onDestroy 안 불림, 케어 계속). onDestroy 복원은 debug 전용 `TEST_FINISH`로 시험했다. |
+
 ## 재현 방법
+
+(아래는 태그 `spike`의 시험 앱 기준이다. 덜울렁 앱의 실행 방법은 README에 있다.)
 
 1. 에뮬레이터 실행, `adb forward tcp:8088 tcp:8088`
 2. 빌드·설치 (CLI는 JDK 21 사용. Android Studio 내장 JBR 25는 Gradle 8.13과 맞지 않는다)

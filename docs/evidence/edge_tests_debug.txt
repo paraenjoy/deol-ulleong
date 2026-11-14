@@ -1,0 +1,100 @@
+PASS  2열 탑승 -> 케어 시작, 무드등 청록  #00bfa5
+PASS  케어 종료 버튼 -> 무드등 원래 색  #ffffff
+PASS  케어 종료 뒤 같은 탑승으로 자동 재시작 안 함  
+PASS  '지금 케어 시작' -> 청록  #00bfa5
+PASS  '무드등 끄고 화면만' 켬 -> 원래 색  #ffffff
+PASS  '무드등 끄고 화면만' 끔 -> 청록  #00bfa5
+PASS  신호 끊김 -> '신호 확인 중' 로그  
+PASS  신호 끊김 -> 무드등 원래 색  #ffffff
+PASS  신호 복구 -> 다시 청록  #00bfa5
+PASS  멀미 부하 -> 외기 유입, 풍량 +1  power=True recirc=False fan=4
+PASS  사용자 변경 감지  
+PASS  정차 -> 공조는 사용자 값 유지(복원 안 함)  fan=6
+PASS  정차 -> 무드등 원래 색  #ffffff
+PASS  공조 꺼짐 -> 공조 케어 건너뜀  power=False recirc=True fan=3
+PASS  주행 중 무드등 케어 중  #ff6d00
+PASS  앱 종료(onDestroy) -> 무드등 원래 색  #ffffff
+PASS  앱 종료 로그  
+
+--- logcat -s DEOL ---
+--------- beginning of main
+vehicle.initialize()
+Car ready=true
+CAR_SPEED granted=true
+speed registered=true
+차량 신호 정상
+ambient cap access=READ_WRITE area=ROW_1_LEFT+ROW_1_RIGHT+ROW_2_LEFT+ROW_2_CENTER+ROW_2_RIGHT
+hvac power area=ROW_1_LEFT+ROW_1_RIGHT+ROW_2_LEFT+ROW_2_CENTER+ROW_2_RIGHT
+hvac recirc area=ROW_1_LEFT+ROW_1_RIGHT+ROW_2_LEFT+ROW_2_CENTER+ROW_2_RIGHT
+hvac fan area=ROW_1_LEFT+ROW_1_RIGHT max=8
+seat cap rear=[ROW_2_LEFT, ROW_2_RIGHT, ROW_2_CENTER]
+seat ROW_2_RIGHT sdk=true -> 탑승 false (2열 전체 false)
+seat ROW_2_CENTER sdk=true -> 탑승 false (2열 전체 false)
+seat ROW_2_LEFT sdk=false -> 탑승 true (2열 전체 true)
+seat ROW_2_LEFT sdk=true -> 탑승 false (2열 전체 false)
+seat ROW_2_LEFT sdk=false -> 탑승 true (2열 전체 true)
+케어 시작 (2열 탑승=true, 수동=false)
+hvac 시작 상태: 전원 true, 내기순환 true, 풍량 3
+주행 #1 준비
+제어 시작 (무드등 켬)
+ambient 원래 값 저장: 스위치 ON, 밝기 60, 색 #FFFFFF
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (11ms)
+ambient 복원(케어 종료 버튼): 색 #FFFFFF, 밝기 60, 스위치 ON
+제어 멈춤: 케어 종료 버튼
+케어 끝: 케어 종료 버튼
+'지금 케어 시작'
+케어 시작 (2열 탑승=true, 수동=true)
+hvac 시작 상태: 전원 true, 내기순환 true, 풍량 3
+주행 #2 준비
+제어 시작 (무드등 켬)
+ambient 원래 값 저장: 스위치 ON, 밝기 60, 색 #FFFFFF
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (10ms)
+무드등 끄고 화면만=true
+ambient 복원(무드등 끄고 화면만): 색 #FFFFFF, 밝기 60, 스위치 ON
+무드등 끄고 화면만=false
+ambient 원래 값 저장: 스위치 ON, 밝기 60, 색 #FFFFFF
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (4ms)
+주행 상태 requiresDO=true active=0x50
+ambient 주의 #FFB300 -> OK #FFB300 (10ms)
+ambient 거침 #FF6D00 -> OK #FF6D00 (11ms)
+시험: 6000ms 동안 차량 신호를 무시
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (8ms)
+신호 확인 중: 차량 신호가 2000ms 넘게 없음, 제어 멈춤
+ambient 복원(신호 끊김): 색 #FFFFFF, 밝기 60, 스위치 ON
+제어 멈춤: 신호 끊김
+차량 신호 정상
+제어 시작 (무드등 켬)
+ambient 원래 값 저장: 스위치 ON, 밝기 60, 색 #FFFFFF
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (5ms)
+ambient 주의 #FFB300 -> OK #FFB300 (10ms)
+ambient 거침 #FF6D00 -> OK #FF6D00 (18ms)
+hvac 케어: 내기순환 true -> false, 풍량 3 -> 4
+멀미 부하 4033ms >= 4000ms: 공조 케어 (외기 유입, 풍량 3에서 4로)
+hvac recirc set OK false
+hvac fan set OK 4
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (7ms)
+ambient 주의 #FFB300 -> OK #FFB300 (6ms)
+ambient 거침 #FF6D00 -> OK #FF6D00 (6ms)
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (7ms)
+hvac: 사용자가 공조를 바꿈(내기순환 false, 풍량 6). 이번 주행에서는 공조를 더 건드리지 않음
+ambient 주의 #FFB300 -> OK #FFB300 (12ms)
+ambient 거침 #FF6D00 -> OK #FF6D00 (9ms)
+주행 상태 requiresDO=false active=0x0
+ambient 복원(정차): 색 #FFFFFF, 밝기 60, 스위치 ON
+hvac 복원 안 함(정차): 사용자 설정 우선
+제어 멈춤: 정차
+주행 #2 끝(정차): 29초, 점수 80, 거침 4, 주의 0, 급가속@00:00(거침 4.9), 급가속@00:12(거침 5.2), 급조향@00:18(거침 5.1), 급제동@00:26(거침 6.7), 공조 00:14 외기 유입, 풍량 3에서 4로
+주행 상태 requiresDO=true active=0x50
+hvac 시작 상태: 전원 false, 내기순환 true, 풍량 3
+주행 #3 준비
+제어 시작 (무드등 켬)
+ambient 원래 값 저장: 스위치 ON, 밝기 60, 색 #FFFFFF
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (13ms)
+ambient 주의 #FFB300 -> OK #FFB300 (8ms)
+ambient 거침 #FF6D00 -> OK #FF6D00 (11ms)
+hvac: 공조 전원이 꺼져 있어 공조 케어를 건너뜀
+ambient 잔잔 #00BFA5 -> OK #00BFA5 (4ms)
+ambient 주의 #FFB300 -> OK #FFB300 (6ms)
+ambient 거침 #FF6D00 -> OK #FF6D00 (4ms)
+ambient 복원(앱 종료): 색 #FFFFFF, 밝기 60, 스위치 ON
+제어 멈춤: 앱 종료
