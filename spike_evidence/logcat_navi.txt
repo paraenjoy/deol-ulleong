@@ -1,0 +1,10 @@
+ 19039 19039 I MCSPIKE : [MainActivity (DO=true)] navi connected
+ 19039 19066 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentLocationInfo CurrentLocationInfo(latitude=37.4127212, longitude=127.094681, heading=0.0, address=수정구 시흥동, routeId=, currentRouteIndex=0)
+ 19039 19066 I MCSPIKE : [MainActivity (DO=true)] navi onRouteStateInfo RouteStateInfo(termsAgreement=true, naviMode=SAFE_GUIDING, isRouting=false, routeOption=RECOMMENDED, remainDestinationChargingInt=0, remainWaypointChargingInt=[0, 0], trafficStatus=TrafficStatus(summary=TrafficCongestionSummary(totalCongestionDist=0.0, totalCongestionTime=60, totalCongestionAvrSpeed=0.0), congestionItemList=[], trafficEventList=[]))
+ 19039 19066 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+ 19039 19072 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+ 19039 19072 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+ 19039 19066 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+ 19039 19066 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+ 19039 19066 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+ 19039 19066 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0

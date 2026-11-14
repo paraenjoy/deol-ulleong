@@ -1,0 +1,8 @@
+05:35:47.148at rear_left=true
+05:35:47.191ctivity (DO=true)] event SeatOccupancy [ROW_2_LEFT] = false
+05:35:49.873at rear_left=false
+05:35:49.913ctivity (DO=true)] event SeatOccupancy [ROW_2_LEFT] = true
+05:35:52.599at rear_left=true
+05:35:52.639ctivity (DO=true)] event SeatOccupancy [ROW_2_LEFT] = false
+05:35:55.331at rear_left=false
+05:35:55.372ctivity (DO=true)] event SeatOccupancy [ROW_2_LEFT] = true

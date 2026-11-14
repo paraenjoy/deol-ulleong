@@ -1,0 +1,29 @@
+11-14 22:56:44.347 25240 25240 I MCSPIKE : SCN 1_app_start_while_route_active
+11-14 22:56:45.317 25319 25319 I MCSPIKE : [MainActivity (DO=true)] navi connected
+11-14 22:56:45.827 25319 25420 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentLocationInfo CurrentLocationInfo(latitude=37.4127212, longitude=127.094681, heading=0.0, address=수정구 시흥동, routeId=02922ff9-e033-11f1-9f62-72e3ec72fa29, currentRouteIndex=0)
+11-14 22:56:45.882 25319 25342 I MCSPIKE : [MainActivity (DO=true)] navi onRouteStateInfo isRouting=false naviMode=ROUTE_GUIDING option=RECOMMENDED
+11-14 22:56:45.905 25319 25342 I MCSPIKE : [MainActivity (DO=true)] navi onTBTInfo #1 n=7 TURN_LEFT 80m '기업지원허브 방면' / TURN_RIGHT 380m '판교IC 방면' / TURN_AVOID_UNDER_R 730m '판교IC 방면' / TURN_LEFT 1200m '판교(판교테크노밸리)역 방면' / TURN_RIGHT 530m '백현동행정복지센터 방면' / TURN_RIGHT 120m '이름 없는 도로' / TURN_ARRIVE 60m '도착'
+11-14 22:56:46.035 25319 25342 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 22:56:52.782 26725 26725 I MCSPIKE : SCN 2_cancel_button
+11-14 22:56:52.845 25319 25319 I MCSPIKE : [MainActivity (DO=true)] navi cancelRoute called (tbt callbacks=1)
+11-14 22:56:53.088 25319 26686 I MCSPIKE : [MainActivity (DO=true)] navi onTBTInfo #2 n=0 
+11-14 22:56:53.105 25319 25342 I MCSPIKE : [MainActivity (DO=true)] navi onDrivingInfo DrivingInfo(destination=DrivingState(name=판교역, duration=0, distance=0, remainDestinationChargingValue=0, isChargingStation=false, isRecommendedChargingStation=false, maxChargingPower=0, targetSoc=0, chargerCount=0, chargingPlan=null), waypoints=[])
+11-14 22:56:53.107 25319 26686 I MCSPIKE : [MainActivity (DO=true)] navi onRouteCancelled
+11-14 22:56:53.121 25319 26686 I MCSPIKE : [MainActivity (DO=true)] navi onNavigationStatus FREE_DRIVE
+11-14 22:56:53.240 25319 25341 I MCSPIKE : [MainActivity (DO=true)] navi onRouteStateInfo isRouting=false naviMode=SAFE_GUIDING option=RECOMMENDED
+11-14 22:56:56.909 27415 27415 I MCSPIKE : SCN 3_route_button
+11-14 22:57:13.057 30180 30180 I MCSPIKE : SCN 4_app_to_front
+11-14 22:57:23.208 31948 31948 I MCSPIKE : SCN 5_cancel_button
+11-14 22:57:23.281 25319 25319 I MCSPIKE : [MainActivity (DO=true)] navi cancelRoute called (tbt callbacks=4)
+11-14 22:57:40.815  4644  4644 I MCSPIKE : SCN 6_route_button
+11-14 22:57:40.878 25319 25319 I MCSPIKE : [MainActivity (DO=true)] navi requestRoute → RouteInfo(latitude=37.394776, longitude=127.111148, displayLatitude=null, displayLongitude=null, poiName=판교역, poiId=, address=경기 성남시 분당구 판교역로 160, poiSubId=, routeOption=RECOMMENDED, poiProvider=, isMobileRequest=false)
+11-14 22:57:46.700 25319 25336 I MCSPIKE : [MainActivity (DO=true)] navi onRouteStarted RouteStartInfo(duration=600, distance=3100, tollFare=0, name=판교역, remainDestinationChargingValue=77018)
+11-14 22:57:46.706 25319  3911 I MCSPIKE : [MainActivity (DO=true)] navi onRouteEnded
+11-14 22:57:46.706 25319  3911 I MCSPIKE : [MainActivity (DO=true)] navi onNavigationStatus ROUTE_DRIVE
+11-14 22:57:46.719 25319 25336 I MCSPIKE : [MainActivity (DO=true)] navi onRouteStateInfo isRouting=false naviMode=ROUTE_GUIDING option=RECOMMENDED
+11-14 22:57:47.013 25319 25336 I MCSPIKE : [MainActivity (DO=true)] navi onTBTInfo #9 n=7 TURN_LEFT 80m '기업지원허브 방면' / TURN_RIGHT 380m '판교IC 방면' / TURN_AVOID_UNDER_R 730m '판교IC 방면' / TURN_LEFT 1200m '판교(판교테크노밸리)역 방면' / TURN_RIGHT 530m '백현동행정복지센터 방면' / TURN_RIGHT 120m '이름 없는 도로' / TURN_ARRIVE 60m '도착'
+11-14 22:57:47.661 25319  3911 I MCSPIKE : [MainActivity (DO=true)] navi onDrivingInfo DrivingInfo(destination=DrivingState(name=판교역, duration=600, distance=3100, remainDestinationChargingValue=77018, isChargingStation=false, isRecommendedChargingStation=false, maxChargingPower=0, targetSoc=10, chargerCount=0, chargingPlan=null), waypoints=[])
+11-14 22:57:50.903 25319 25319 I MCSPIKE : [MainActivity (DO=true)] navi poll getTBTInfo x5, callbacks so far=10
+11-14 22:57:54.948  7368  7368 I MCSPIKE : SCN 7_app_to_front
+11-14 22:58:03.045 25319 25319 I MCSPIKE : [MainActivity (DO=true)] navi poll getTBTInfo x10, callbacks so far=15
+11-14 22:58:17.677 25319 25319 I MCSPIKE : [MainActivity (DO=true)] navi cancelRoute called (tbt callbacks=23)

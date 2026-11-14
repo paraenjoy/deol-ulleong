@@ -1,0 +1,33 @@
+# Gradle / Android Studio
+.gradle/
+.kotlin/
+build/
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# 로컬 경로 · 서명 · 인증정보 (저장소에 넣지 않는다)
+local.properties
+*.jks
+*.keystore
+*.p12
+keystore.properties
+signing.properties
+.env
+*.pem
+credentials*.json
+
+# SDK 바이너리는 Gradle 의존성으로만 받는다
+*.aar
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# 개인 작업 문서 · 제출 서류(개인정보 포함)
+CLAUDE.md
+submission/
+
+# 기타
+*.log
+__pycache__/

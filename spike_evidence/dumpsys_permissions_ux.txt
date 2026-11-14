@@ -1,0 +1,62 @@
+## permission protection levels
+pleos.car.permission.CAR_DRIVE: prot=normal
+pleos.car.permission.CAR_LIGHTS: prot=normal
+pleos.car.permission.CONTROL_CAR_LIGHTS: prot=normal
+pleos.car.permission.CAR_CLIMATE: prot=normal
+pleos.car.permission.CONTROL_CAR_CLIMATE: prot=normal
+pleos.car.permission.CAR_SEATS: prot=normal
+pleos.car.permission.CAR_INFO: prot=normal
+pleos.car.permission.NAVI_ROUTE: prot=normal
+android.car.permission.CAR_SPEED: prot=dangerous
+
+## CarUxRestrictionsManagerService
+** Dumping CarUxRestrictionsManagerService
+
+*CarUxRestrictionsManagerService*
+UX Restrictions Clients:
+  callbacks: 10
+  killed: false
+  broadcasts count: -1
+Display id: 0 UXR: DO: false UxR: 0 time: 4165087333651
+UX Restriction configurations:
+Physical display port: null
+Occupant zone id of the display: -1
+Display type: 0
+===========================================
+baseline mode UXR:
+-------------------------------------------
+State:unknown num restrictions:1
+Requires DO? true
+Restrictions: 0x1ff
+Speed Range: None
+-------------------------------------------
+State:parked num restrictions:1
+Requires DO? false
+Restrictions: 0x0
+Speed Range: None
+-------------------------------------------
+State:idling num restrictions:1
+Requires DO? true
+Restrictions: 0x50
+Speed Range: None
+-------------------------------------------
+
+## CarPackageManagerService
+** Dumping CarPackageManagerService
+
+*CarPackageManagerService*
+mEnableActivityBlocking:true
+mPreventTemplatedAppsFromShowingDialog:true
+mTemplateActivityClassName:androidx.car.app.activity.CarAppActivity
+Display Restrictions:
+Display 0 is unrestricted
+ Blocked activity log:
+**System allowlist**
+**Client Policies**
+**Unprocessed policy services**
+
+## cmd hmg_car_service
+cmd: Can't find service: hmg_car_service
+## cmd car_service emulate-driving-state
+
+Exception occurred while executing 'emulate-driving-state':

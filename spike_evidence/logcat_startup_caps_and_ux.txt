@@ -1,0 +1,66 @@
+--------- beginning of main
+11-14 05:39:36.709 26424 26424 I MCSPIKE : [MainActivity (DO=true)] onCreate MainActivity (DO=true)
+11-14 05:39:36.901 26424 26424 I MCSPIKE : [MainActivity (DO=true)] vehicle.initialize() called
+11-14 05:39:36.975 26424 26424 I MCSPIKE : [MainActivity (DO=true)] Car lifecycle ready=true
+11-14 05:39:36.984 26424 26424 I MCSPIKE : [MainActivity (DO=true)] PERF_VEHICLE_SPEED config: rate 10.0~20.0
+11-14 05:39:36.986 26424 26424 I MCSPIKE : [MainActivity (DO=true)] registerCallback(PERF_VEHICLE_SPEED)=true
+11-14 05:39:36.989 26424 26424 I MCSPIKE : [MainActivity (DO=true)] UX[initial] requiresDO=false active=0x0
+11-14 05:39:37.017 26424 26424 I MCSPIKE : [MainActivity (DO=true)] navi connected
+11-14 05:39:37.031 26424 26452 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:37.461 26424 26449 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentLocationInfo CurrentLocationInfo(latitude=37.4127212, longitude=127.094681, heading=0.0, address=수정구 시흥동, routeId=, currentRouteIndex=0)
+11-14 05:39:37.487 26424 26449 I MCSPIKE : [MainActivity (DO=true)] navi onRouteStateInfo RouteStateInfo(termsAgreement=true, naviMode=SAFE_GUIDING, isRouting=false, routeOption=RECOMMENDED, remainDestinationChargingInt=0, remainWaypointChargingInt=[0, 0], trafficStatus=TrafficStatus(summary=TrafficCongestionSummary(totalCongestionDist=0.0, totalCongestionTime=60, totalCongestionAvrSpeed=0.0), congestionItemList=[], trafficEventList=[]))
+11-14 05:39:38.021 26424 26631 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:38.411 26424 26424 I MCSPIKE : [MainActivity (DO=true)] registerSteeringWheelAngle OK
+11-14 05:39:38.413 26424 26631 I MCSPIKE : [MainActivity (DO=true)] cap SteeringWheelAngle access=READ bounds=-470.0~500.0 → handwheel=true
+11-14 05:39:38.714 26424 26452 I MCSPIKE : [MainActivity (DO=true)] cap AmbientLightBrightness access=READ_WRITE [[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]:0~100]
+11-14 05:39:38.717 26424 26449 I MCSPIKE : [MainActivity (DO=true)] cap AmbientLightSwitch access=READ_WRITE [[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]:[AUTOMATIC, ON, OFF]]
+11-14 05:39:38.719 26424 26539 I MCSPIKE : [MainActivity (DO=true)] get AmbientColorAutoByDriveMode FAIL java.lang.Exception: java.lang.IllegalArgumentException: property ID is not in carPropertyConfig list, and so it is not supported: 0x21200787
+11-14 05:39:38.719 26424 26631 I MCSPIKE : [MainActivity (DO=true)] cap AmbientLightBrightnessColor access=READ_WRITE areas=[[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]]
+11-14 05:39:39.015 26424 26631 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:39.016 26424 26539 I MCSPIKE : [MainActivity (DO=true)] set AmbientSwitch ON → OK ON
+11-14 05:39:39.024 26424 26539 I MCSPIKE : [MainActivity (DO=true)] set AmbientBrightness 100 → OK 100
+11-14 05:39:39.031 26424 26539 I MCSPIKE : [MainActivity (DO=true)] get AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853 (51283)
+11-14 05:39:39.036 26424 26631 I MCSPIKE : [MainActivity (DO=true)] get AmbientSwitch [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = ON
+11-14 05:39:39.048 26424 26631 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853
+11-14 05:39:39.052 26424 26631 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853
+11-14 05:39:39.052 26424 26539 I MCSPIKE : [MainActivity (DO=true)] cap SeatOccupancy access=READ areas=[[ROW_2_LEFT], [ROW_2_RIGHT], [ROW_2_CENTER], [ROW_1_LEFT], [ROW_1_RIGHT]]
+11-14 05:39:39.064 26424 26631 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_2_LEFT] = true
+11-14 05:39:39.287 26424 26631 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_RIGHT] = true
+11-14 05:39:39.287 26424 26631 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_LEFT] = true
+11-14 05:39:39.295 26424 26866 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_2_RIGHT] = true
+11-14 05:39:39.298 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_RIGHT] = true
+11-14 05:39:39.299 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_LEFT] = true
+11-14 05:39:39.300 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_LEFT] = true
+11-14 05:39:39.301 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_RIGHT] = true
+11-14 05:39:39.301 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_CENTER] = true
+11-14 05:39:39.306 26424 26866 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_2_CENTER] = true
+11-14 05:39:39.317 26424 26539 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_CENTER] = true
+11-14 05:39:39.321 26424 26539 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_1_LEFT] = true
+11-14 05:39:39.325 26424 26539 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_LEFT] = true
+11-14 05:39:39.332 26424 26866 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_1_RIGHT] = true
+11-14 05:39:39.333 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_RIGHT] = true
+11-14 05:39:39.337 26424 26866 I MCSPIKE : [MainActivity (DO=true)] cap HvacRecirculation access=READ_WRITE areas=[[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]]
+11-14 05:39:39.338 26424 26866 I MCSPIKE : [MainActivity (DO=true)] cap HvacAutoRecirculation access=READ_WRITE areas=[[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]]
+11-14 05:39:39.341 26424 26539 I MCSPIKE : [MainActivity (DO=true)] cap HvacFanSpeed access=READ_WRITE [[ROW_1_LEFT, ROW_1_RIGHT]:1~8]
+11-14 05:39:39.536 26424 26539 I MCSPIKE : [MainActivity (DO=true)] set AmbientColor[auto] [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] 초록 → OK 0xC853 (6ms)
+11-14 05:39:40.022 26424 26539 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:41.005 26424 26866 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:42.014 26424 26539 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:42.519 27467 27467 I MCSPIKE : SCN gear Drive 40kph
+11-14 05:39:42.567 26424 26424 I MCSPIKE : [MainActivity (DO=true)] UX[listener] requiresDO=true active=0x50
+11-14 05:39:42.763 26424 26866 I MCSPIKE : [MainActivity (DO=true)] set AmbientColor[auto] [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] 빨강 → OK 0xD50000 (6ms)
+11-14 05:39:42.766 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xD50000
+11-14 05:39:43.007 26424 26866 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:44.018 26424 26866 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:44.951 26424 26866 I MCSPIKE : [MainActivity (DO=true)] set AmbientColor[auto] [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] 초록 → OK 0xC853 (9ms)
+11-14 05:39:44.953 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853
+11-14 05:39:45.008 26424 26866 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:45.664 28021 28021 I MCSPIKE : SCN gear Park 0kph
+11-14 05:39:45.759 26424 26424 I MCSPIKE : [MainActivity (DO=true)] UX[listener] requiresDO=false active=0x0
+11-14 05:39:45.790 26424 27783 I MCSPIKE : [MainActivity (DO=true)] set AmbientColor[auto] [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] 빨강 → OK 0xD50000 (7ms)
+11-14 05:39:45.796 26424 26866 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xD50000
+11-14 05:39:46.016 26424 26866 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:47.019 26424 26866 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-14 05:39:47.974 26424 26866 I MCSPIKE : [MainActivity (DO=true)] set AmbientColor[auto] [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] 초록 → OK 0xC853 (9ms)
+11-14 05:39:47.974 26424 27783 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853
+11-14 05:39:48.004 26424 27783 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0

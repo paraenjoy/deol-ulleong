@@ -1,0 +1,15 @@
+  6781  6781 I MCSPIKE : [MainActivity (DO=true)] HVAC test recircArea=[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] fanArea=[ROW_1_LEFT, ROW_1_RIGHT]
+  6781  6800 I MCSPIKE : [MainActivity (DO=true)] event HvacRecirculation = true
+  6781  6800 I MCSPIKE : [MainActivity (DO=true)] event HvacFanSpeed = 3
+  6781  6800 I MCSPIKE : [MainActivity (DO=true)] get HvacRecirculation = true → set false
+  6781  6801 I MCSPIKE : [MainActivity (DO=true)] get HvacFanSpeed = 3 → set 4
+  6781  6801 I MCSPIKE : [MainActivity (DO=true)] set HvacRecirculation OK → false
+  6781  6800 I MCSPIKE : [MainActivity (DO=true)] event HvacRecirculation = false
+  6781  6800 I MCSPIKE : [MainActivity (DO=true)] set HvacFanSpeed FAIL java.lang.Exception: PropertyAsyncError{request ID: 54, property: HVAC_FAN_SPEED, areaId: 5, error code: 2, vendor error code: 0}
+  6781  6801 I MCSPIKE : [MainActivity (DO=true)] cap HvacPower access=READ_WRITE areas=[[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]]
+  6781  6801 I MCSPIKE : [MainActivity (DO=true)] set HvacPower ON → OK true, retry fan
+  6781  7704 I MCSPIKE : [MainActivity (DO=true)] set HvacFanSpeed OK → 4
+  6781  7168 I MCSPIKE : [MainActivity (DO=true)] event HvacFanSpeed = 4
+  6781  7168 I MCSPIKE : [MainActivity (DO=true)] readback HvacRecirculation = false
+  6781  7704 I MCSPIKE : [MainActivity (DO=true)] readback HvacFanSpeed = 4
+AFTER console power True recirc False fan 4 Outside 4

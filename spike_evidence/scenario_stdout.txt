@@ -1,0 +1,17 @@
+--- 0_idle_20kph
+--- A_smooth_accel_20to60_16s
+--- A_hold_60
+--- B_hard_accel_60to100_2.5s
+--- B_hold_100
+--- C_hard_brake_100to40_2s
+--- C_hold_40
+--- D_smooth_curve_in_40kph_30deg_4s
+--- D_hold_curve
+--- D_smooth_curve_out
+--- E_to_60
+--- E_hard_steer_60kph_0to150_0.8s
+--- E_hold_steer
+--- E_steer_back
+--- E_settle
+--- F_gentle_stop_60to0_25s
+--- END

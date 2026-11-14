@@ -1,0 +1,111 @@
+--------- beginning of main
+11-15 00:41:58.205  5272  5272 I MCSPIKE : [MainActivity (DO=true)] onCreate MainActivity (DO=true)
+11-15 00:41:58.227  5272  5272 I MCSPIKE : [MainActivity (DO=true)] vehicle.initialize() called
+11-15 00:41:58.250  5272  5272 I MCSPIKE : [MainActivity (DO=true)] Car lifecycle ready=true
+11-15 00:41:58.253  5272  5272 I MCSPIKE : [MainActivity (DO=true)] PERF_VEHICLE_SPEED config: rate 10.0~20.0
+11-15 00:41:58.255  5272  5272 I MCSPIKE : [MainActivity (DO=true)] registerCallback(PERF_VEHICLE_SPEED)=true
+11-15 00:41:58.261  5272  5272 I MCSPIKE : [MainActivity (DO=true)] UX[initial] requiresDO=false active=0x0
+11-15 00:41:58.290  5272  5272 I MCSPIKE : [MainActivity (DO=true)] navi connected
+11-15 00:41:58.414  5272  5345 I MCSPIKE : [MainActivity (DO=true)] navi onTBTInfo #1 n=0 
+11-15 00:41:58.470  5272  5345 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentLocationInfo CurrentLocationInfo(latitude=37.4127212, longitude=127.094681, heading=0.0, address=수정구 시흥동, routeId=, currentRouteIndex=0)
+11-15 00:41:58.486  5272  5345 I MCSPIKE : [MainActivity (DO=true)] navi onRouteStateInfo isRouting=false naviMode=SAFE_GUIDING option=RECOMMENDED
+11-15 00:41:58.977  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=8 stEv=0 stPoll=4
+11-15 00:41:59.028  5272  5347 I MCSPIKE : [MainActivity (DO=true)] navi onCurrentRoadSpeedLimit 0
+11-15 00:41:59.487  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=13 stEv=0 stPoll=9
+11-15 00:41:59.730  5272  5272 I MCSPIKE : [MainActivity (DO=true)] registerSteeringWheelAngle OK
+11-15 00:41:59.733  5272  5347 I MCSPIKE : [MainActivity (DO=true)] cap SteeringWheelAngle access=READ bounds=-470.0~500.0 → handwheel=true
+11-15 00:41:59.828  5272  5289 I MCSPIKE : [MainActivity (DO=true)] cap AmbientLightBrightnessColor access=READ_WRITE areas=[[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]]
+11-15 00:41:59.829  5272  5347 I MCSPIKE : [MainActivity (DO=true)] cap AmbientLightBrightness access=READ_WRITE [[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]:0~100]
+11-15 00:41:59.829  5272  5345 I MCSPIKE : [MainActivity (DO=true)] cap AmbientLightSwitch access=READ_WRITE [[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]:[AUTOMATIC, ON, OFF]]
+11-15 00:41:59.831  5272  5345 I MCSPIKE : [MainActivity (DO=true)] get AmbientColorAutoByDriveMode FAIL java.lang.Exception: java.lang.IllegalArgumentException: property ID is not in carPropertyConfig list, and so it is not supported: 0x21200787
+11-15 00:41:59.933  5272  5345 I MCSPIKE : [MainActivity (DO=true)] set AmbientSwitch ON → OK ON
+11-15 00:41:59.943  5272  5345 I MCSPIKE : [MainActivity (DO=true)] set AmbientBrightness 100 → OK 100
+11-15 00:41:59.943  5272  5347 I MCSPIKE : [MainActivity (DO=true)] cap SeatOccupancy access=READ areas=[[ROW_2_LEFT], [ROW_2_RIGHT], [ROW_2_CENTER], [ROW_1_LEFT], [ROW_1_RIGHT]]
+11-15 00:41:59.948  5272  5345 I MCSPIKE : [MainActivity (DO=true)] get AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853 (51283)
+11-15 00:41:59.955  5272  5345 I MCSPIKE : [MainActivity (DO=true)] get AmbientSwitch [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = ON
+11-15 00:42:00.016  5272  5347 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_2_LEFT] = true
+11-15 00:42:00.029  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853
+11-15 00:42:00.032  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_RIGHT] = true
+11-15 00:42:00.032  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_LEFT] = true
+11-15 00:42:00.032  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_RIGHT] = true
+11-15 00:42:00.033  5272  5289 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_CENTER] = true
+11-15 00:42:00.033  5272  5289 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_LEFT] = true
+11-15 00:42:00.035  5272  5289 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853
+11-15 00:42:00.039  5272  5680 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_RIGHT] = true
+11-15 00:42:00.044  5272  5347 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_2_CENTER] = true
+11-15 00:42:00.046  5272  5347 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_2_RIGHT] = true
+11-15 00:42:00.048  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_LEFT] = true
+11-15 00:42:00.048  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_RIGHT] = true
+11-15 00:42:00.050  5272  5680 I MCSPIKE : [MainActivity (DO=true)] cap HvacRecirculation access=READ_WRITE areas=[[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]]
+11-15 00:42:00.053  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_LEFT] = true
+11-15 00:42:00.053  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_RIGHT] = true
+11-15 00:42:00.057  5272  5680 I MCSPIKE : [MainActivity (DO=true)] cap HvacAutoRecirculation access=READ_WRITE areas=[[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT]]
+11-15 00:42:00.061  5272  5347 I MCSPIKE : [MainActivity (DO=true)] cap HvacFanSpeed access=READ_WRITE [[ROW_1_LEFT, ROW_1_RIGHT]:1~8]
+11-15 00:42:00.062  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_CENTER] = true
+11-15 00:42:00.063  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_2_CENTER] = true
+11-15 00:42:00.066  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_LEFT] = true
+11-15 00:42:00.069  5272  5347 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_1_RIGHT] = true
+11-15 00:42:00.071  5272  5347 I MCSPIKE : [MainActivity (DO=true)] event SeatOccupancy [ROW_1_RIGHT] = true
+11-15 00:42:00.074  5272  5347 I MCSPIKE : [MainActivity (DO=true)] get SeatOccupancy [ROW_1_LEFT] = true
+11-15 00:42:00.246  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=20 stEv=2 stPoll=14
+11-15 00:42:00.681  5272  5680 I MCSPIKE : [MainActivity (DO=true)] set AmbientColor[auto] [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] 초록 → OK 0xC853 (13ms)
+11-15 00:42:00.795  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=25 stEv=2 stPoll=20
+11-15 00:42:01.330  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=31 stEv=2 stPoll=24
+11-15 00:42:01.847  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=36 stEv=2 stPoll=29
+11-15 00:42:02.359  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=41 stEv=2 stPoll=34
+11-15 00:42:02.871  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=46 stEv=3 stPoll=39
+11-15 00:42:03.380  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=52 stEv=3 stPoll=44
+11-15 00:42:03.891  5272  5272 I MCSPIKE : TICK v=0.00m/s(0.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=57 stEv=3 stPoll=49
+11-15 00:42:04.211  5272  5272 I MCSPIKE : [MainActivity (DO=true)] UX[listener] requiresDO=true active=0x50
+11-15 00:42:04.303  5272  5680 I MCSPIKE : [MainActivity (DO=true)] set AmbientColor[auto] [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] 빨강 → OK 0xD50000 (5ms)
+11-15 00:42:04.307  5272  5680 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xD50000
+11-15 00:42:04.401  5272  5272 I MCSPIKE : TICK v=6.11m/s(22.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=7.63 shake=7.63 level=HARSH spdEv=62 stEv=3 stPoll=54
+11-15 00:42:04.912  5272  5272 I MCSPIKE : TICK v=8.33m/s(30.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=7.98 shake=7.98 level=HARSH spdEv=67 stEv=3 stPoll=59
+11-15 00:42:05.424  5272  5272 I MCSPIKE : TICK v=11.11m/s(40.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=5.06 shake=5.06 level=HARSH spdEv=72 stEv=3 stPoll=64
+11-15 00:42:05.932  5272  5272 I MCSPIKE : TICK v=13.33m/s(48.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=4.37 shake=4.37 level=HARSH spdEv=77 stEv=3 stPoll=69
+11-15 00:42:06.445  5272  5272 I MCSPIKE : TICK v=16.11m/s(58.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=5.43 shake=5.43 level=HARSH spdEv=82 stEv=4 stPoll=74
+11-15 00:42:06.956  5272  5272 I MCSPIKE : TICK v=18.89m/s(68.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=5.08 shake=5.08 level=HARSH spdEv=88 stEv=4 stPoll=79
+11-15 00:42:07.466  5272  5272 I MCSPIKE : TICK v=20.56m/s(74.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=3.62 shake=3.62 level=HARSH spdEv=92 stEv=4 stPoll=84
+11-15 00:42:07.979  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-15.0 wheel=-1.00 lat=-0.97 lon=4.34 shake=4.44 level=HARSH spdEv=98 stEv=5 stPoll=89
+11-15 00:42:08.329  5272  5272 I MCSPIKE : [MainActivity (DO=true)] navi poll getTBTInfo x5, callbacks so far=5
+11-15 00:42:08.492  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-90.0 wheel=-6.00 lat=-14.65 lon=0.00 shake=14.65 level=HARSH spdEv=103 stEv=9 stPoll=94
+11-15 00:42:09.001  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-150.0 wheel=-10.00 lat=-26.52 lon=0.00 shake=26.52 level=HARSH spdEv=108 stEv=12 stPoll=99
+11-15 00:42:09.513  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-150.0 wheel=-10.00 lat=-29.52 lon=0.00 shake=29.52 level=HARSH spdEv=113 stEv=12 stPoll=104
+11-15 00:42:10.021  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-150.0 wheel=-10.00 lat=-29.52 lon=0.00 shake=29.52 level=HARSH spdEv=118 stEv=12 stPoll=109
+11-15 00:42:10.532  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-150.0 wheel=-10.00 lat=-29.52 lon=0.00 shake=29.52 level=HARSH spdEv=123 stEv=12 stPoll=114
+11-15 00:42:11.042  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-105.0 wheel=-7.00 lat=-22.54 lon=0.00 shake=22.54 level=HARSH spdEv=128 stEv=14 stPoll=119
+11-15 00:42:11.552  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-30.0 wheel=-2.00 lat=-8.77 lon=0.00 shake=8.77 level=HARSH spdEv=133 stEv=17 stPoll=124
+11-15 00:42:12.060  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=HARSH spdEv=138 stEv=19 stPoll=129
+11-15 00:42:12.570  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=HARSH spdEv=143 stEv=19 stPoll=134
+11-15 00:42:12.928  5272  5272 I MCSPIKE : [MainActivity (DO=true)] HVAC test recircArea=[ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] fanArea=[ROW_1_LEFT, ROW_1_RIGHT]
+11-15 00:42:12.930  5272  6563 I MCSPIKE : [MainActivity (DO=true)] event HvacRecirculation = false
+11-15 00:42:12.930  5272  6563 I MCSPIKE : [MainActivity (DO=true)] event HvacFanSpeed = 4
+11-15 00:42:12.947  5272  5289 I MCSPIKE : [MainActivity (DO=true)] get HvacRecirculation = false → set true
+11-15 00:42:12.950  5272  5289 I MCSPIKE : [MainActivity (DO=true)] get HvacFanSpeed = 4 → set 5
+11-15 00:42:12.954  5272  5289 I MCSPIKE : [MainActivity (DO=true)] set HvacRecirculation OK → true
+11-15 00:42:12.954  5272  5289 I MCSPIKE : [MainActivity (DO=true)] set HvacFanSpeed OK → 5
+11-15 00:42:12.958  5272  5289 I MCSPIKE : [MainActivity (DO=true)] event HvacRecirculation = true
+11-15 00:42:12.958  5272  5289 I MCSPIKE : [MainActivity (DO=true)] event HvacFanSpeed = 5
+11-15 00:42:13.080  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=HARSH spdEv=149 stEv=19 stPoll=139
+11-15 00:42:13.189  5272  5289 I MCSPIKE : [MainActivity (DO=true)] set AmbientColor[auto] [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] 초록 → OK 0xC853 (8ms)
+11-15 00:42:13.189  5272  6563 I MCSPIKE : [MainActivity (DO=true)] event AmbientColor [ROW_1_LEFT, ROW_1_RIGHT, ROW_2_LEFT, ROW_2_CENTER, ROW_2_RIGHT] = 0xC853
+11-15 00:42:13.599  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=154 stEv=19 stPoll=144
+11-15 00:42:13.661  5272  5289 I MCSPIKE : [MainActivity (DO=true)] readback HvacRecirculation = true
+11-15 00:42:13.662  5272  5289 I MCSPIKE : [MainActivity (DO=true)] readback HvacFanSpeed = 5
+11-15 00:42:14.112  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=159 stEv=19 stPoll=149
+11-15 00:42:14.622  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=164 stEv=19 stPoll=154
+11-15 00:42:15.130  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=169 stEv=20 stPoll=159
+11-15 00:42:15.644  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=174 stEv=20 stPoll=164
+11-15 00:42:16.156  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=179 stEv=20 stPoll=169
+11-15 00:42:16.662  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=184 stEv=20 stPoll=174
+11-15 00:42:17.172  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=190 stEv=20 stPoll=179
+11-15 00:42:17.683  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=195 stEv=20 stPoll=184
+11-15 00:42:18.193  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=200 stEv=21 stPoll=189
+11-15 00:42:18.348  5272  5272 I MCSPIKE : [MainActivity (DO=true)] navi poll getTBTInfo x10, callbacks so far=10
+11-15 00:42:18.701  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=205 stEv=21 stPoll=194
+11-15 00:42:19.213  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=210 stEv=21 stPoll=199
+11-15 00:42:19.724  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=215 stEv=21 stPoll=204
+11-15 00:42:20.234  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=220 stEv=21 stPoll=209
+11-15 00:42:20.743  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=225 stEv=21 stPoll=214
+11-15 00:42:21.255  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=230 stEv=22 stPoll=219
+11-15 00:42:21.763  5272  5272 I MCSPIKE : TICK v=22.22m/s(80.0km/h) steer=-0.0 wheel=-0.00 lat=0.00 lon=0.00 shake=0.00 level=CALM spdEv=235 stEv=22 stPoll=224
