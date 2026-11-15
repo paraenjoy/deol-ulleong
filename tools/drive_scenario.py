@@ -2,13 +2,13 @@
 
 준비
   1) 에뮬레이터 실행, adb forward tcp:8088 tcp:8088
-  2) python tools/console_viewer.py 를 켜고 브라우저로 http://127.0.0.1:8090/ 을 연다(보기 전용 콘솔, 녹화용).
+  2) python tools/console_viewer.py 를 켜고 브라우저로 http://127.0.0.1:8090/ 을 연다(보기 전용 콘솔).
      원래 콘솔 페이지(8088)를 열어 두면 페이지의 물리 계산이 속도를 덮어써서 값이 튄다.
   3) 덜울렁 앱 설치(adb install -r -g ...)
 
 실행
   python tools/drive_scenario.py              # 동의, 피드백 버튼은 사람이 누른다(안내가 나오면 Enter)
-  python tools/drive_scenario.py --auto-tap   # 동의, 피드백 버튼도 스크립트가 누른다(리허설, 자동 시험용)
+  python tools/drive_scenario.py --auto-tap   # 동의, 피드백 버튼도 스크립트가 누른다(완전 자동)
   옵션: --keep-consent  앱 데이터를 지우지 않는다(동의 화면 생략)
         --with-brake    정차 장면 끝에 급제동을 넣는다
 
@@ -184,8 +184,8 @@ def prepare(keep_consent):
     call("/vehicle/body?ambient_mode=On&ambient_brightness=60&ambient_color=%23ffffff")
     adb("shell", "am", "force-stop", PKG)
     if not keep_consent:
-        adb("shell", "pm", "clear", PKG)
-        adb("shell", "pm", "grant", PKG, "android.car.permission.CAR_SPEED")
+        adb("shell", "pm", "clear", "--user", "current", PKG)  # AAOS 화면 사용자(10)의 데이터를 지운다
+        adb("shell", "pm", "grant", "--user", "current", PKG, "android.car.permission.CAR_SPEED")
     time.sleep(1)
     adb("shell", "am", "start", "-n", f"{PKG}/.MainActivity")
     time.sleep(4)
@@ -207,7 +207,7 @@ def main():
     time.sleep(1.5)
     prepare(a.keep_consent)
     if not a.auto_tap:
-        input(">> 녹화를 시작한 뒤 Enter")
+        input(">> 준비 완료. 시작하려면 Enter")
     threading.Thread(target=logcat_watch, daemon=True).start()
     t0 = time.time()
 

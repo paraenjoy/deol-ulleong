@@ -54,7 +54,7 @@ adb install -r -g apk/덜울렁_release.apk
 
 ## 실행 방법
 
-### 사람이 직접 조작할 때
+### Virtual Console에서 직접 조작하기
 
 1. 에뮬레이터를 켜고 `adb forward tcp:8088 tcp:8088`, 브라우저로 http://127.0.0.1:8088/ 을 엽니다.
 2. 덜울렁을 실행하고 '동의하고 시작'을 누릅니다.
@@ -62,20 +62,22 @@ adb install -r -g apk/덜울렁_release.apk
 4. 기어 D, ACCEL을 길게 누르면 급가속, BRAKE는 급제동, 핸들을 빨리 돌리면 급조향입니다. 무드등과 앱 화면 색이 바뀝니다.
 5. 기어 P로 바꾸면 주행이 끝나고 무드등·공조가 원래대로 돌아가며 리포트가 나옵니다.
 
-### 시연 대본으로 실행할 때 (영상 녹화용)
+### 시연 장면 자동 재현하기
 
-콘솔 페이지를 열어 둔 채 스크립트로 속도를 넣으면, 페이지가 자체 물리 계산으로 계산한 속도를 서버에 다시 써서 속도가 튑니다(원인과 측정은 [`docs/evidence/console_jitter_test.txt`](docs/evidence/console_jitter_test.txt)). 그래서 녹화할 때는 **보기 전용 콘솔**을 엽니다.
+시연 영상과 같은 주행(약 80초)을 스크립트로 다시 돌려 볼 수 있습니다. Python 3만 있으면 됩니다.
 
 ```
 adb forward tcp:8088 tcp:8088
-python tools/console_viewer.py            # 브라우저로 http://127.0.0.1:8090/ 을 연다
-python tools/drive_scenario.py            # 다른 창에서. 동의·피드백 버튼은 사람이 누른다
-python tools/drive_scenario.py --auto-tap # 리허설: 버튼도 스크립트가 누른다
+python tools/console_viewer.py
+python tools/drive_scenario.py --auto-tap
 ```
 
-보기 전용 콘솔은 원래 페이지를 그대로 중계하면서 페이지의 물리 계산과 속도 쓰기만 끕니다. 무드등 색, 공조, 속도, 핸들 표시는 그대로 보입니다. 시험 결과 원래 페이지에서는 125회 중 22회가 튀었고(최대 33 km/h 차이), 보기 전용 콘솔에서는 0회였습니다.
+- 두 번째 명령을 켜 둔 채 브라우저로 **http://127.0.0.1:8090/** (보기 전용 콘솔)을 엽니다. 원래 콘솔(8088) 페이지는 닫습니다.
+  원래 페이지는 자체 물리 계산으로 속도를 서버에 다시 써서, 스크립트가 넣은 속도와 섞여 값이 튑니다(125회 중 22회, 보기 전용 콘솔에서는 0회. [`docs/evidence/console_jitter_test.txt`](docs/evidence/console_jitter_test.txt)).
+- 세 번째 명령은 기어 P, 2열 비움, 공조와 무드등 초기값으로 맞추고 앱 데이터를 지운 뒤 아래 장면을 차례로 넣습니다. `--auto-tap`을 빼면 동의와 피드백 버튼을 사람이 누릅니다.
+- 장면별 시각은 `tools/out/demo_timeline.txt`에 남습니다.
 
-대본(약 80초)과 release APK에서 실제로 나온 결과([`docs/evidence/release_demo_timeline.txt`](docs/evidence/release_demo_timeline.txt)):
+release APK로 실행한 결과([`docs/evidence/release_demo_timeline.txt`](docs/evidence/release_demo_timeline.txt)):
 
 | 장면 | 콘솔 입력 | 앱 결과 |
 |---|---|---|
@@ -89,8 +91,6 @@ python tools/drive_scenario.py --auto-tap # 리허설: 버튼도 스크립트가
 | 8 정차 | 80에서 0 km/h (약 1.4 m/s²), 기어 P | 무드등 흰색 60%, 내기순환, 풍량 3으로 복원 |
 | 9 리포트 | | 승차감 90점, 거침 2회, 급가속 00:19, 급조향 00:28, 공조 케어 00:29 |
 | 10 피드백 | | '조금 울렁' 기록 |
-
-`--with-brake`를 붙이면 정차 끝에 급제동을 넣습니다. `--shots DIR`은 장면별 화면을 저장합니다.
 
 ## 흔들림 계산 명세
 
@@ -156,14 +156,11 @@ Pleos 권한은 모두 `pleos.car.permission.` 접두어이며, 에뮬레이터�
 
 ## 시험 결과
 
-- 시연 대본: release APK를 새로 설치해 실행, 위 표와 같이 동작([`docs/evidence/release_demo_timeline.txt`](docs/evidence/release_demo_timeline.txt), 화면 [`docs/screens/`](docs/screens)).
-- 예외 동작 17항목 모두 통과([`docs/evidence/edge_tests_debug.txt`](docs/evidence/edge_tests_debug.txt), `python tools/edge_tests.py`):
+- 시연 장면: release APK를 새로 설치해 실행, 위 표와 같이 동작([`docs/evidence/release_demo_timeline.txt`](docs/evidence/release_demo_timeline.txt), 화면 [`docs/screens/`](docs/screens)).
+- 예외 동작 17항목 모두 통과([`docs/evidence/edge_tests_debug.txt`](docs/evidence/edge_tests_debug.txt)):
   케어 종료 버튼 복원, 종료 뒤 자동 재시작 안 함, '무드등 끄고 화면만' 켜고 끄기, 신호 끊김 때 멈춤·복원·'신호 확인 중'과 복구,
   공조 케어 뒤 사용자 변경 감지와 복원 안 함, 공조 꺼짐 때 건너뜀, 앱 종료(onDestroy) 복원.
-- 신호 끊김은 콘솔로 만들 수 없어(콘솔 세션이 없어도 차속 이벤트는 계속 옴) debug 빌드에만 있는 시험용 브로드캐스트로 흉내 냈습니다.
-  `adb shell am broadcast -a com.motioncare.deolulleong.TEST_SIGNAL_LOSS --el ms 5000`.
-  Android 12부터 뒤로 키는 첫 화면을 끝내지 않아 onDestroy 시험은 `TEST_FINISH` 브로드캐스트로 했습니다. release 빌드에는 이 훅이 없습니다.
-- 알림음: 단계가 오를 때 ToneGenerator가 AudioTrack으로 소리를 내보내는 것을 앱 로그로 확인했습니다. 에뮬레이터 소리가 PC 스피커로 나오는지는 PC 설정에 따릅니다.
+- 신호 끊김과 앱 종료는 콘솔로 만들 수 없어 debug 빌드에만 있는 시험용 신호로 확인했습니다. release 빌드에는 이 기능이 없습니다.
 
 이 시험은 규칙이 의도대로 동작하는지 확인한 것이며, 실제 승차감이나 멀미 개선 효과를 검증한 것은 아닙니다.
 
@@ -177,13 +174,13 @@ Pleos 권한은 모두 `pleos.car.permission.` 접두어이며, 에뮬레이터�
 ## 빌드
 
 ```
-# JDK 21 사용 (Android Studio 내장 JBR 25는 Gradle 8.13과 맞지 않음)
 ./gradlew assembleDebug
 ./gradlew assembleRelease
 ```
 
+- JDK 21로 빌드를 확인했습니다(Gradle 8.13, AGP 8.13.1).
 - Pleos SDK는 Gradle 의존성으로만 받습니다(`settings.gradle.kts`의 `https://nexus-playground.pleos.ai/repository/maven-releases/`). SDK 바이너리는 저장소에 없습니다.
-- release 서명 정보는 저장소 밖 파일(`~/.motioncare/keystore.properties`, 또는 환경변수 `DEOL_KEYSTORE_PROPS`)에서 읽습니다. 파일이 없으면 서명 없는 release가 만들어집니다.
+- 서명 키는 저장소에 넣지 않았습니다. 서명 정보가 없으면 `assembleRelease`는 서명 없는 APK를 만듭니다. 설치용으로는 `apk/`의 서명된 APK를 쓰면 됩니다.
 
 ## 저장소 구성
 
@@ -191,9 +188,8 @@ Pleos 권한은 모두 `pleos.car.permission.` 접두어이며, 에뮬레이터�
 |---|---|
 | `app/src/main/java/com/motioncare/deolulleong/` | `ShakeEstimator.kt`(계산 명세, 상수), `CareEngine.kt`(케어 흐름), `CarIo.kt`(무드등·공조·좌석), `Trip.kt`(기록, 점수), `Ui.kt`(Compose 화면), `MainActivity.kt` |
 | `apk/` | 서명된 release APK |
-| `tools/console_viewer.py` | 보기 전용 콘솔 프록시(녹화용) |
-| `tools/drive_scenario.py` | 시연 대본과 타임라인 |
-| `tools/edge_tests.py` | 예외 동작 시험 |
-| `tools/console_jitter_test.py` | 콘솔 속도 튐 시험 |
+| `tools/drive_scenario.py` | 시연 장면 자동 재현 |
+| `tools/console_viewer.py` | 보기 전용 콘솔(스크립트 입력 때 속도 튐 방지) |
+| `tools/edge_tests.py`, `tools/console_jitter_test.py` | 예외 동작 시험, 콘솔 속도 튐 시험 |
 | `docs/screens/`, `docs/evidence/` | 화면과 시험 근거 |
 | `SPIKE_RESULT.md`, `spike_evidence/` | 기획 전 기술 확인 보고서와 근거. 시험 앱 코드는 git 태그 `spike` |
